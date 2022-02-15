@@ -1,0 +1,89 @@
+<h2 class="heading" style=" color:blue">Login Form</h2>
+<div class="container">
+    <form [formGroup]="xyz">
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>FirstName</mat-label>
+            <input matInput type="text" formControlName="fName" id="fname">
+            <span style="color:red" *ngIf="xyz.controls['fName'].hasError('required') 
+      && (xyz.controls['fName'].touched || xyz.controls['fName'].dirty)">firstName is Required</span>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>LastName</mat-label>
+            <input matInput type="text" formControlName="lName" id="fname">
+            <span style=" color:red" *ngIf="xyz.controls['lName'].hasError('required') 
+        && (xyz.controls['lName'].touched || xyz.controls['lName'].dirty)">LastName is Required</span>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Country</mat-label>
+            <mat-select formControlName="country">
+                <mat-option value="in">India</mat-option>
+                <mat-option value="us">USA </mat-option>
+                <mat-option value="pak">Pakistan</mat-option>
+                <span style=" color:red" *ngIf="xyz.controls['country'].hasError('required') 
+        && (xyz.controls['country'].touched || xyz.controls['country'].dirty)">Country is Required</span>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>State</mat-label>
+            <mat-select formControlName="state">
+                <mat-option value="in">Mharashtra</mat-option>
+                <mat-option value="us">Bihar </mat-option>
+                <mat-option value="pak">Assam</mat-option>
+                <span style=" color:red" *ngIf="xyz.controls['state'].hasError('required') 
+        && (xyz.controls['state'].touched || xyz.controls['state'].dirty)">State is Required</span>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-radio-group name="Gender" formControlName="gender" class="form-field">
+            <mat-radio-button value="male" checked="true">Male</mat-radio-button>
+            <mat-radio-button value="female">Female</mat-radio-button>
+            <span style=" color:red" *ngIf="xyz.controls['gender'].hasError('required') 
+        && (xyz.controls['gender'].touched || xyz.controls['gender'].dirty)">Gender is Required</span>
+
+        </mat-radio-group>
+        <mat-form-field class="form-field" appearence="outline" class="form-field">
+            <label>MobileNumber</label>
+            <input matInput type="text" formControlName="mobNo">
+            <mat-error *ngIf="xyz.controls['mobNo'].touched && xyz.invalid">
+                <span *ngIf="xyz.controls['mobNo'].hasError('required')">MobileNumber is required</span>
+                <span *ngIf="xyz.controls['mobNo'].hasError('min')"> Min MobileNumber should be 7 required</span>
+                <span *ngIf="xyz.controls['mobNo'].hasError('max')">Max MobileNumber should be 13 required</span>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-field" appearence="outline">
+            <label>Email</label>
+            <input matInput type="text" formControlName="email">
+            <mat-error *ngIf="xyz.controls['email'].touched && xyz.invalid">
+                <span *ngIf="xyz.controls['email'].hasError('required')"> Email is required</span>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-field" appearence="outline">
+            <label>Age</label>
+            <input matInput type="text" formControlName="age">
+            <mat-error *ngIf="xyz.controls['age'].touched && xyz.invalid">
+                <span *ngIf="xyz.controls['age'].hasError('required')"> age is required</span>
+                <span *ngIf="xyz.controls['mobNo'].hasError('min')">Min Age should be 18 is required</span>
+                <span *ngIf="xyz.controls['mobNo'].hasError('max')">Max Age should be 100 is required</span>
+            </mat-error>
+        </mat-form-field>
+
+
+        <button type="button" class="form-field" (click)="onClick()"> Save</button>
+        <button type="button" class="form-field" (click)="resetForm()">Reset</button>
+    </form>
+
+    <!-- <div *ngIf="abc">
+    <div class="app">{{abc.fName}}</div>
+    <div class="app">{{abc.lName}}</div>
+    <div class="app">{{abc.country}}</div>
+    <div class="app">{{abc.State}}</div>
+    <div class="app">{{abc.gender}}</div>
+    <div class="app">{{abc.mobNo}}</div>
+    <div class="app">{{abc.email}}</div>
+    <div class="app">{{abc.age}}</div>
+    </div> -->

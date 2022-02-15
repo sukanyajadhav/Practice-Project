@@ -1,0 +1,6 @@
+<button type="submit" (click)="save()">Submit</button>
+
+<div *ngIf="isValid;else other">
+    something here...
+</div>
+<ng-template #other><div>something not....</div></ng-template>

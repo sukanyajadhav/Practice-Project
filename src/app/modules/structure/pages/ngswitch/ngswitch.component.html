@@ -1,0 +1,77 @@
+
+
+
+<form [formGroup]="marksForm">
+   <div id="uName">
+     <mat-form-field class="example-full-width" appearance="fill">
+       <mat-label class="common">sub1 marks</mat-label>
+       <input class="common" matInput type="text" formControlName="sub1">
+          <mat-error *ngIf="marksForm.controls['sub1'].touched && marksForm.invalid">
+              <span *ngIf="marksForm.controls['sub1'].hasError('required')">math required</span>
+              <span *ngIf="marksForm.controls['sub1'].hasError('min')">min math marks required</span>
+              <span *ngIf="marksForm.controls['sub1'].hasError('max')">max math marks required</span>
+          </mat-error> 
+     </mat-form-field>
+   </div>
+
+   <div id="uName">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label class="common">sub2 marks</mat-label>
+        <input class="common" matInput type="text" formControlName="sub2">
+           <mat-error *ngIf="marksForm.controls['sub2'].touched && marksForm.invalid">
+               <span *ngIf="marksForm.controls['sub2'].hasError('required')">Name required</span>
+               <span *ngIf="marksForm.controls['sub2'].hasError('min')">min java marks required</span>
+               <span *ngIf="marksForm.controls['sub2'].hasError('max')">max java marks required</span>
+           </mat-error> 
+      </mat-form-field>
+    </div>
+
+    <div id="uName">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label class="common">sub3 marks</mat-label>
+        <input class="common" matInput type="text" formControlName="sub3">
+           <mat-error *ngIf="marksForm.controls['sub3'].touched && marksForm.invalid">
+               <span *ngIf="marksForm.controls['sub3'].hasError('required')">Name required</span>
+               <span *ngIf="marksForm.controls['sub2'].hasError('min')">min php marks required</span>
+               <span *ngIf="marksForm.controls['sub2'].hasError('max')">max php marks required</span>
+           </mat-error> 
+      </mat-form-field>
+    </div>
+
+    <div id="uName">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label class="common">sub4 marks</mat-label>
+        <input class="common" matInput type="text" formControlName="sub4">
+           <mat-error *ngIf="marksForm.controls['sub4'].touched && marksForm.invalid">
+               <span *ngIf="marksForm.controls['sub4'].hasError('required')">Name required</span>
+               <span *ngIf="marksForm.controls['sub2'].hasError('min')">min angular marks required</span>
+               <span *ngIf="marksForm.controls['sub2'].hasError('max')">max angular marks required</span>
+               <!-- pattern="{0,100}" -->
+           </mat-error> 
+      </mat-form-field>
+    </div>
+
+    <div id="uName">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label class="common">sub5 marks</mat-label>
+        <input class="common" matInput type="text" formControlName="sub5">
+           <mat-error *ngIf="marksForm.controls['sub5'].touched && marksForm.invalid">
+               <span *ngIf="marksForm.controls['sub5'].hasError('required')">Name required</span>
+               <span *ngIf="marksForm.controls['sub2'].hasError('min')">min db marks required</span>
+               <span *ngIf="marksForm.controls['sub2'].hasError('max')">max db marks required</span>
+           </mat-error> 
+      </mat-form-field>
+
+    </div>
+  </form>
+    <button (click)="store()">submit</button>
+ <div [ngSwitch]="grade">
+    <div *ngSwitchCase="'A'">Excellent Job</div>
+    <div *ngSwitchCase="'B'">Good Job</div>
+    <div *ngSwitchCase="'C'">Need More Improvements</div>
+    <div *ngSwitchCase="'D'">Need More Consistent Work</div>
+    
+    </div> 
+  
+    <!-- <div *ngFor="let abc of xyz,let i=index;let f1=first;let f2=last,let even=even; let odd=odd" [ngStyle]="{'color':f1 || f2?'red':'black'}">{{abc}}={{i}}={{f1}}={{f2}}={{even}}={{odd}}</div>
+     -->
